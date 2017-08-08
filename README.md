@@ -49,6 +49,13 @@ standby_mode = 'on'
 primary_conninfo = 'host=192.168.11.213 port=5432 user=postgres application_name=postgres_a'
 ```
 
+### pg_hba.conf 
+```
+$ diff pg_hba.conf pg_hba.conf.org
+< local   replication     postgres                                trust
+< host    replication     postgres        127.0.0.1/32            trust
+< host    replication     postgres        192.168.11.0/24            trust
+```
 
 ## スレーブ構築
 
